@@ -1,0 +1,8 @@
+<%= form_with url: exercises_path do |form| %>
+  <% @notes.each do |note| %>
+    <%= check_box_tag "notes[]", note %>
+    <%= note %>
+  <% end %>
+
+  <%= form.submit "Zapisz" %>
+<% end %>
