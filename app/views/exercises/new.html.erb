@@ -4,5 +4,7 @@
     <%= note %>
   <% end %>
 
-  <%= form.submit "Zapisz" %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.submit "gen" %>
 <% end %>

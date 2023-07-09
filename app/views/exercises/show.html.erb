@@ -1,4 +1,7 @@
 <div>
+  <%= @exercise.name %>
+  <br>
+  <br>
   <% @exercise.notes.each do |note| %>
     <% @strings[note.name.to_sym].keys.reverse.each_with_index do |string, index| %>
       <%= string %>-<%= (5 - index).times.map { "-" }.join %><%= @strings[note.name.to_sym][string] %><%= index.times.map { "-" }.join %>-
