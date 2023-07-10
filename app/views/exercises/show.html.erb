@@ -1,13 +1,43 @@
-<div>
-  <%= @exercise.name %>
-  <br>
-  <br>
-  <% @exercise.notes.each do |note| %>
-    <% @strings[note.name.to_sym].keys.reverse.each_with_index do |string, index| %>
-      <%= string %>-<%= (5 - index).times.map { "-" }.join %><%= @strings[note.name.to_sym][string] %><%= index.times.map { "-" }.join %>-
-      <br>
-    <% end %>
-    <br>
-  <% end %>
-  
-</div>
+<%= @exercise.name %>
+<br>
+Notes used:
+<% @exercise.notes.each do |note| %>
+  <%= note.name %>
+<% end %>
+<br>
+<br>
+
+E1-
+<% @exercise.notes.each do |note| %>
+  <%= @E1[note.name.to_sym] %>
+<% end %>
+<br>
+
+H2-
+<% @exercise.notes.each do |note| %>
+  <%= @H2[note.name.to_sym] %>
+<% end %>
+<br>
+
+G3-
+<% @exercise.notes.each do |note| %>
+  <%= @G3[note.name.to_sym] %>
+<% end %>
+<br>
+
+D4-
+<% @exercise.notes.each do |note| %>
+  <%= @D4[note.name.to_sym] %>
+<% end %>
+<br>
+
+A5-
+<% @exercise.notes.each do |note| %>
+  <%= @A5[note.name.to_sym] %>
+<% end %>
+<br>
+
+E6-
+<% @exercise.notes.each do |note| %>
+  <%= @E6[note.name.to_sym] %>
+<% end %>
