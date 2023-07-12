@@ -13,4 +13,73 @@
  *= require_tree .
  *= require_self
  */
+ header {
+    background-color: #333;
+    color: #fff;
+    padding: 40px;
+  }
 
+ .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+
+  .E1_str {
+    grid-column-start: 1;
+    grid-row-start: 1;
+  }
+  .H2_str {
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+  .G3_str {
+    grid-column-start: 1;
+    grid-row-start: 3;
+  }
+  .D4_str {
+    grid-column-start: 1;
+    grid-row-start: 4;
+  }
+  .A5_str {
+    grid-column-start: 1;
+    grid-row-start: 5;
+  }
+  .E6_str {
+    grid-column-start: 1;
+    grid-row-start: 6;
+  }
+
+  .E1_tabs {
+    grid-column-start: 7;
+    grid-row-start: 1;
+  }
+  .H2_tabs {
+    grid-column-start: 6;
+    grid-row-start: 2;
+  }
+  .G3_tabs {
+    grid-column-start: 5;
+    grid-row-start: 3;
+  }
+  .D4_tabs {
+    grid-column-start: 4;
+    grid-row-start: 4;
+  }
+  .A5_tabs {
+    grid-column-start: 3;
+    grid-row-start: 5;
+  }
+  .E6_tabs {
+    grid-column-start: 2;
+    grid-row-start: 6;
+  }

@@ -1,43 +1,77 @@
-<%= @exercise.name %>
-<br>
-Notes used:
-<% @exercise.notes.each do |note| %>
-  <%= note.name %>
-<% end %>
-<br>
-<br>
+<header>
+  <h1><%= @exercise.name %></h1>
+  <p>Notes used:</p>
+  <% @exercise.notes.each do |note| %>
+    <%= note.name %>
+  <% end %>
+  </p>
+</header>
 
-E1-
-<% @exercise.notes.each do |note| %>
-  <%= @E1[note.name.to_sym] %>
-<% end %>
-<br>
+<div class="grid-container">
+  <div class="E1_str">E1</div>
+  <div class="H2_str">H2</div>
+  <div class="G3_str">G3</div>
+  <div class="D4_str">D4</div>
+  <div class="A5_str">A5</div>
+  <div class="E6_str">E6</div>
 
-H2-
-<% @exercise.notes.each do |note| %>
-  <%= @H2[note.name.to_sym] %>
-<% end %>
-<br>
+  <div class="E1_tabs">
+    <% string_notes = [] %>
+    <% @exercise.notes.each do |note| %>
+      <% string_notes << @E1[note.name.to_sym] %>
+    <% end %>
+    <% string_notes.sort.each do |sorted| %>
+      <%= sorted %>
+    <% end %>
+  </div>
 
-G3-
-<% @exercise.notes.each do |note| %>
-  <%= @G3[note.name.to_sym] %>
-<% end %>
-<br>
+  <div class="H2_tabs">
+    <% string_notes = [] %>
+    <% @exercise.notes.each do |note| %>
+      <% string_notes << @H2[note.name.to_sym] %>
+    <% end %>
+    <% string_notes.sort.each do |sorted| %>
+      <%= sorted %>
+    <% end %>
+  </div>
 
-D4-
-<% @exercise.notes.each do |note| %>
-  <%= @D4[note.name.to_sym] %>
-<% end %>
-<br>
+  <div class="G3_tabs">
+    <% string_notes = [] %>
+    <% @exercise.notes.each do |note| %>
+      <% string_notes << @G3[note.name.to_sym] %>
+    <% end %>
+    <% string_notes.sort.each do |sorted| %>
+      <%= sorted %>
+    <% end %>
+  </div>
 
-A5-
-<% @exercise.notes.each do |note| %>
-  <%= @A5[note.name.to_sym] %>
-<% end %>
-<br>
+  <div class="D4_tabs">
+    <% string_notes = [] %>
+    <% @exercise.notes.each do |note| %>
+      <% string_notes << @D4[note.name.to_sym] %>
+    <% end %>
+    <% string_notes.sort.each do |sorted| %>
+      <%= sorted %>
+    <% end %>
+  </div>
 
-E6-
-<% @exercise.notes.each do |note| %>
-  <%= @E6[note.name.to_sym] %>
-<% end %>
+  <div class="A5_tabs">
+    <% string_notes = [] %>
+    <% @exercise.notes.each do |note| %>
+      <% string_notes << @A5[note.name.to_sym] %>
+    <% end %>
+    <% string_notes.sort.each do |sorted| %>
+      <%= sorted %>
+    <% end %>
+  </div>
+
+  <div class="E6_tabs">
+    <% string_notes = [] %>
+    <% @exercise.notes.each do |note| %>
+      <% string_notes << @E6[note.name.to_sym] %>
+    <% end %>
+    <% string_notes.sort.each do |sorted| %>
+      <%= sorted %>
+    <% end %>
+  </div>
+</div>
