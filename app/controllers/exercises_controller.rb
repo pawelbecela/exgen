@@ -4,7 +4,9 @@ class ExercisesController < ApplicationController
   end
 
   def create
-    @exercise = Exercise.create!(name: params[:name])
+    @exercise = Exercise.create!(name: params[:name],
+                                 low: params[:low],
+                                 high: params[:high])
 
     params[:notes].each do |note_name|
       note = Note.new(name: note_name)

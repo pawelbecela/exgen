@@ -4,7 +4,20 @@
     <%= note %>
   <% end %>
 
+  <br>
+  <%= form.label "lowest fret" %>
+  <%= form.text_field :low %>
+
+  <br>
+  <%= form.label "highest fret" %>
+  <%= form.text_field :high %>
+
+  <br>
   <%= form.label :name %>
   <%= form.text_field :name %>
-  <%= form.submit "gen" %>
+
+  <br>
+  <br>
+  <%= form.submit "generate" %>
+
 <% end %>

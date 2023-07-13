@@ -5,6 +5,10 @@
     <%= note.name %>
   <% end %>
   </p>
+  <p>Lowest fret:</p>
+  <%= @exercise.low %>
+  <p>Highest fret:</p>
+  <%= @exercise.high %>
 </header>
 
 <div class="grid-container">
@@ -18,7 +22,7 @@
   <div class="E1_tabs">
     <% string_notes = [] %>
     <% @exercise.notes.each do |note| %>
-      <% string_notes << @E1[note.name.to_sym] %>
+      <% string_notes << @E1[note.name.to_sym] if @E1[note.name.to_sym] <= @exercise.high && @E1[note.name.to_sym] >= @exercise.low %>
     <% end %>
     <% string_notes.sort.each do |sorted| %>
       <%= sorted %>
@@ -28,7 +32,7 @@
   <div class="H2_tabs">
     <% string_notes = [] %>
     <% @exercise.notes.each do |note| %>
-      <% string_notes << @H2[note.name.to_sym] %>
+      <% string_notes << @H2[note.name.to_sym] if @H2[note.name.to_sym] <= @exercise.high && @H2[note.name.to_sym] >= @exercise.low %>
     <% end %>
     <% string_notes.sort.each do |sorted| %>
       <%= sorted %>
@@ -38,7 +42,7 @@
   <div class="G3_tabs">
     <% string_notes = [] %>
     <% @exercise.notes.each do |note| %>
-      <% string_notes << @G3[note.name.to_sym] %>
+      <% string_notes << @G3[note.name.to_sym] if @G3[note.name.to_sym] <= @exercise.high && @G3[note.name.to_sym] >= @exercise.low %>
     <% end %>
     <% string_notes.sort.each do |sorted| %>
       <%= sorted %>
@@ -48,7 +52,7 @@
   <div class="D4_tabs">
     <% string_notes = [] %>
     <% @exercise.notes.each do |note| %>
-      <% string_notes << @D4[note.name.to_sym] %>
+      <% string_notes << @D4[note.name.to_sym] if @D4[note.name.to_sym] <= @exercise.high && @D4[note.name.to_sym] >= @exercise.low %>
     <% end %>
     <% string_notes.sort.each do |sorted| %>
       <%= sorted %>
@@ -58,7 +62,7 @@
   <div class="A5_tabs">
     <% string_notes = [] %>
     <% @exercise.notes.each do |note| %>
-      <% string_notes << @A5[note.name.to_sym] %>
+      <% string_notes << @A5[note.name.to_sym] if @A5[note.name.to_sym] <= @exercise.high && @A5[note.name.to_sym] >= @exercise.low %>
     <% end %>
     <% string_notes.sort.each do |sorted| %>
       <%= sorted %>
@@ -68,7 +72,7 @@
   <div class="E6_tabs">
     <% string_notes = [] %>
     <% @exercise.notes.each do |note| %>
-      <% string_notes << @E6[note.name.to_sym] %>
+      <% string_notes << @E6[note.name.to_sym] if @E6[note.name.to_sym] <= @exercise.high && @E6[note.name.to_sym] >= @exercise.low %>
     <% end %>
     <% string_notes.sort.each do |sorted| %>
       <%= sorted %>
