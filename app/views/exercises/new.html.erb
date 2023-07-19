@@ -3,6 +3,13 @@
     <%= check_box_tag "notes[]", note %>
     <%= note %>
   <% end %>
+  
+  <br>
+  <%= "choose exercise pattern:" %>
+  <% @patterns.each do |pattern| %>
+    <%= check_box_tag "pattern", pattern %>
+    <%= pattern %>
+  <% end %>
 
   <br>
   <%= form.label "lowest fret" %>
