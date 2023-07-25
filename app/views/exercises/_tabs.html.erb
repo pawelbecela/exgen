@@ -1,0 +1,35 @@
+<% @e1_tabs = [] %>
+<% @exercise.notes.each do |note| %>
+  <% tab = @E1[note.name.to_sym] %>
+  <% @e1_tabs << tab if tab <= @exercise.high && tab >= @exercise.low %>
+<% end %>
+
+<% @h2_tabs = [] %>
+<% @exercise.notes.each do |note| %>
+  <% tab = @H2[note.name.to_sym] %>
+  <% @h2_tabs << tab if tab <= @exercise.high && tab >= @exercise.low %>
+<% end %>
+
+<% @g3_tabs = [] %>
+<% @exercise.notes.each do |note| %>
+  <% tab = @G3[note.name.to_sym] %>
+  <% @g3_tabs << tab if tab <= @exercise.high && tab >= @exercise.low %>
+<% end %>
+  
+<% @d4_tabs = [] %>
+<% @exercise.notes.each do |note| %>
+  <% tab = @D4[note.name.to_sym] %>
+  <% @d4_tabs << tab if tab <= @exercise.high && tab >= @exercise.low %>
+<% end %>
+  
+<% @a5_tabs = [] %>
+<% @exercise.notes.each do |note| %>
+  <% tab = @A5[note.name.to_sym] %>
+  <% @a5_tabs << tab if tab <= @exercise.high && tab >= @exercise.low %>
+<% end %>
+
+<% @e6_tabs = [] %>
+<% @exercise.notes.each do |note| %>
+  <% tab = @E6[note.name.to_sym] %>
+  <% @e6_tabs << tab if tab <= @exercise.high && tab >= @exercise.low %>
+<% end %>

@@ -19,5 +19,5 @@
   <div class="A5_str">A5</div>
   <div class="E6_str">E6</div>
 
-  <%= render partial: @exercise.pattern.to_s %>
+  <%= render "pattern#{@exercise.pattern}" %>
 </div>

@@ -1,7 +1,7 @@
 class ExercisesController < ApplicationController
   def new
     @notes = [ "c", "d", "e", "f", "g", "a", "h" ]
-    @patterns = ["1", "2"]
+    @patterns = ["1", "2", "3"]
   end
 
   def create
