@@ -83,3 +83,51 @@
     grid-column-start: 2;
     grid-row-start: 6;
   }
+
+  .notes {
+    background-color: #666;
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+    color: black;
+  }
+
+  .pattern {
+    background-color: #9d2020;
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+    color: black;
+  }
+
+  .low_fret {
+    background-color: #209d37;
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+    color: black;
+  }
+
+  .high_fret {
+    background-color: #da0016;
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+    color: black;
+  }
+  
+  .ex_name {
+    background-color: #1e00ff;
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+    color: black;
+  }
+  
+  .generate {
+    background-color: #6f718b;
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+    color: black;
+  }

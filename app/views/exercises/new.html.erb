@@ -1,23 +1,41 @@
 <%= form_with url: exercises_path do |form| %>
-  <% @notes.each do |note| %>
-    <%= check_box_tag "notes[]", note %>
-    <%= note %>
-  <% end %>
+  <div class="notes">
+    <%= "Notes for the exercise" %>
+    <br>
+    <% @notes.each do |note| %>
+      <%= check_box_tag "notes[]", note %>
+      <%= note %>
+    <% end %>
+  </div>
   
-  <%= "choose exercise pattern:" %>
-  <% @patterns.each do |pattern| %>
-    <%= check_box_tag "pattern", pattern %>
-    <%= pattern %>
-  <% end %>
+  <div class="pattern">
+    <%= "Exercise pattern" %>
+    <br>
+    <% @patterns.each do |pattern| %>
+      <%= check_box_tag "pattern", pattern %>
+      <%= pattern %>
+    <% end %>
+  </div>
 
-  <%= form.label "lowest fret" %>
-  <%= form.text_field :low %>
+  <div class="low_fret">
+    <%= form.label "lowest fret" %>
+    <br>
+    <%= form.text_field :low %>
+  </div>
 
-  <%= form.label "highest fret" %>
-  <%= form.text_field :high %>
+  <div class="high_fret">
+    <%= form.label "highest fret" %>
+    <br>
+    <%= form.text_field :high %>
+  </div>
+  
+  <div class="ex_name">
+    <%= form.label :name %>
+    <br>
+    <%= form.text_field :name %>
+  </div>
 
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-
-  <%= form.submit "generate" %>
+  <div class="generate">
+    <%= form.submit "Generate" %>
+  </div
 <% end %>
