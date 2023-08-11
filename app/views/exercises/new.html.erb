@@ -6,6 +6,17 @@
       <%= check_box_tag "notes[]", note %>
       <%= note %>
     <% end %>
+    <br>
+    <br>
+    <input type="checkbox" onClick="toggle(this)" /> check all<br/>
+    <script>
+      function toggle(source) {
+        checkboxes = document.getElementsByName("notes[]");
+        for(var i=0, n=checkboxes.length;i<n;i++) {
+          checkboxes[i].checked = source.checked;
+        }
+      }
+    </script>
   </div>
   
   <div class="pattern">
