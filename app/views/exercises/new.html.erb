@@ -20,13 +20,35 @@
   <div class="low_fret">
     <%= form.label "lowest fret" %>
     <br>
-    <%= form.text_field :low %>
+    <%= form.range_field :low, in: 0..12 %>
+    <span id="low_value"></span>
+    <script>
+      var slider_low = document.getElementById("low");
+      var output_low = document.getElementById("low_value");
+      output_low.innerHTML = slider_low.value; // Display the default slider value
+      
+      // Update the current slider value (each time you drag the slider handle)
+      slider_low.oninput = function() {
+        output_low.innerHTML = this.value;
+      }
+    </script>
   </div>
 
   <div class="high_fret">
     <%= form.label "highest fret" %>
     <br>
-    <%= form.text_field :high %>
+    <%= form.range_field :high, in: 0..12 %>
+    <span id="high_value"></span>
+    <script>
+      var slider_high = document.getElementById("high");
+      var output_high = document.getElementById("high_value");
+      output_high.innerHTML = slider_high.value; // Display the default slider value
+      
+      // Update the current slider value (each time you drag the slider handle)
+      slider_high.oninput = function() {
+        output_high.innerHTML = this.value;
+      }
+    </script>
   </div>
   
   <div class="ex_name">
