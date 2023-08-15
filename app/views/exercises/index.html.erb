@@ -1,7 +1,16 @@
-<% @exercises.each do |exercise| %>
-  <%= exercise.name %>
-  <%= link_to 'show', exercise %>
-<% end %>
+<table>
+  <tr>
+    <th>Exercise name</th>
+    <th>Pattern</th>
+  </tr>
+  <% @exercises.each do |exercise| %>  
+    <tr>
+      <td><%= link_to "#{exercise.name}", exercise %></td>
+      <td><%= exercise.pattern %></td>
+    </tr>
+  <% end %>
+</table>
 
-<%= link_to "Generate another exercise", root_path %>
-
+<div class="another">
+  <%= link_to "Generate another exercise", root_path %>
+</div>
