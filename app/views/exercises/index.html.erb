@@ -1,0 +1,7 @@
+<% @exercises.each do |exercise| %>
+  <%= exercise.name %>
+  <%= link_to 'show', exercise %>
+<% end %>
+
+<%= link_to "Generate another exercise", root_path %>
+

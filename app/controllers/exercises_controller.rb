@@ -65,5 +65,9 @@ class ExercisesController < ApplicationController
       @e6_tabs << tab if tab <= @exercise.high && tab >= @exercise.low
     end
   end
+
+  def index
+    @exercises = Exercise.all
+  end
 end
 
