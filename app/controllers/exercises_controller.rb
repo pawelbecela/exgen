@@ -1,22 +1,31 @@
 class ExercisesController < ApplicationController
   def new
+    @exercise = Exercise.new
+    @exercise.notes.build
     @notes = [ "c", "d", "e", "f", "g", "a", "h" ]
     @patterns = [ "1", "2", "3" ]
   end
 
   def create
-    @exercise = Exercise.create!(name: params[:name],
-                                 low: params[:low],
-                                 high: params[:high],
-                                 pattern: params[:pattern])
+    @exercise = Exercise.new(exercise_params)                              
 
-    params[:notes].each do |note_name|
-      note = Note.new(name: note_name)
-      note.exercise = @exercise
-      note.save!
+    # params[:notes].each do |note_name|
+    #   note = Note.new(name: note_name)
+    #   note.exercise = @exercise
+    #   note.save!
+    # end
+    #debugger
+  
+    if @exercise.save
+      redirect_to exercise_path(@exercise)
+    else
+      @patterns = [ "1", "2", "3" ] 
+      render :new
     end
+  end
 
-    redirect_to exercise_path(@exercise)
+  def exercise_params
+    params.permit(:name, :low, :high, :pattern, notes: [:name])
   end
 
   def show

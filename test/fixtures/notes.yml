@@ -2,10 +2,8 @@
 
 one:
   name: MyString
-  position: 1
   exercise: one
 
 two:
   name: MyString
-  position: 1
   exercise: two
