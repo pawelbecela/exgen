@@ -1,4 +1,4 @@
-<%= form_with url: exercises_path do |form| %>
+<%= form_with(url: exercises_path) do |form| %>
   <% if @exercise.errors.any? %>
     <div>
       <h2><%= pluralize(@exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
@@ -10,7 +10,7 @@
     </div>
   <% end %>
 
-  <% if @notes && @notes.any? %>
+  <!-- <% if @notes && @notes.any? %> --> 
     <div class="notes">
       <%= "Notes for the exercise" %>
       <br>
@@ -30,10 +30,10 @@
         }
       </script>
     </div>
-  <% end %>
+    <!-- <% end %> --> 
   
   <div class="pattern">
-    <%= "Exercise pattern" %>
+    <%= form.label "Exercise pattern" %>
     <br>
     <% @patterns.each do |pattern| %>
       <%= check_box_tag "pattern", pattern %>
