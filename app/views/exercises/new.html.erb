@@ -1,26 +1,39 @@
-<%= form_with url: exercises_path do |form| %>
-  <div class="notes">
-    <%= "Notes for the exercise" %>
-    <br>
-    <% @notes.each do |note| %>
-      <%= check_box_tag "notes[]", note %>
-      <%= note %>
-    <% end %>
-    <br>
-    <br>
-    <input type="checkbox" onClick="toggle(this)" /> check all<br/>
-    <script>
-      function toggle(source) {
-        checkboxes = document.getElementsByName("notes[]");
-        for(var i=0, n=checkboxes.length;i<n;i++) {
-          checkboxes[i].checked = source.checked;
+<%= form_with(url: exercises_path) do |form| %>
+  <% if @exercise.errors.any? %>
+    <div>
+      <h2><%= pluralize(@exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
+      <ul>
+        <% @exercise.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- <% if @notes && @notes.any? %> --> 
+    <div class="notes">
+      <%= "Notes for the exercise" %>
+      <br>
+      <% @notes.each do |note| %>
+        <%= check_box_tag "notes[]", note %>
+        <%= note %>
+      <% end %>
+      <br>
+      <br>
+      <input type="checkbox" onClick="toggle(this)" /> check all<br/>
+      <script>
+        function toggle(source) {
+          checkboxes = document.getElementsByName("notes[]");
+          for(var i=0, n=checkboxes.length;i<n;i++) {
+            checkboxes[i].checked = source.checked;
+          }
         }
-      }
-    </script>
-  </div>
+      </script>
+    </div>
+    <!-- <% end %> --> 
   
   <div class="pattern">
-    <%= "Exercise pattern" %>
+    <%= form.label "Exercise pattern" %>
     <br>
     <% @patterns.each do |pattern| %>
       <%= check_box_tag "pattern", pattern %>
@@ -69,8 +82,9 @@
   </div>
 
   <div class="generate">
-    <%= form.submit "Generate" %>
+    <%= form.submit "Generate", "data-turbo" => false %>
   </div
 <% end %>
 
 <%= link_to "List of exercises", exercises_path %>
+
