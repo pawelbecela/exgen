@@ -7,15 +7,8 @@ class ExercisesController < ApplicationController
   end
 
   def create
-    @exercise = Exercise.new(exercise_params)                              
+    @exercise = Exercise.new(exercise_params)
 
-    # params[:notes].each do |note_name|
-    #   note = Note.new(name: note_name)
-    #   note.exercise = @exercise
-    #   note.save!
-    # end
-    #debugger
-  
     if @exercise.save
       redirect_to exercise_path(@exercise)
     else
@@ -23,9 +16,12 @@ class ExercisesController < ApplicationController
       render :new
     end
   end
-
+ 
   def exercise_params
-    params.permit(:name, :low, :high, :pattern, notes: [:name])
+    params.require(:exercise).permit(
+      :name, :low, :high, :pattern,
+      notes_attributes: [ :name ]
+    )
   end
 
   def show
